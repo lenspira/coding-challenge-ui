@@ -1,0 +1,20 @@
+[
+  {
+    "id": 56788,
+    "name": "Hartford, CT",
+    "address": "550 Main Street, Hartford, CT 06103",
+    "website": "https://hartfordct.gov",
+    "phone": "860-757-9311",
+    "sicCd": "9441",
+    "facebookPage": "https://facebook.com"
+  },
+  {
+    "id": 56788,
+    "name": "Birmingham, AL",
+    "address": "140 Main Street, Birmingham, AL 35201",
+    "website": "https://birminghamal.gov",
+    "phone": "555-987-6543",
+    "sicCd": "1234",
+    "facebookPage": "https://facebook.com"
+  }
+]

@@ -18,6 +18,12 @@ const InfoCard = ({ id, header, content }) => {
     setIsEditing(false);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleEditClick();
+    }
+  };
+
   return (
     <Card
       id={id}
@@ -27,7 +33,7 @@ const InfoCard = ({ id, header, content }) => {
       <Card.Body>
         <Card.Title
           id={`${id}_title`}
-          style={{ fontSize: "1rem", color: "blue" }}
+          style={{ fontSize: "1rem", color: "#0000FF" }}
         >
           {header}
         </Card.Title>
@@ -36,13 +42,14 @@ const InfoCard = ({ id, header, content }) => {
             className="py-0 text-center"
             value={currentContent}
             onChange={handleContentChange}
-            style={{ fontSize: "2rem", color: "black" }}
+            onKeyDown={handleKeyDown}
+            style={{ fontSize: "2rem", color: "#000" }}
           />
         ) : (
           <Card.Text
             id={`${id}_value`}
             className="mb-0"
-            style={{ fontSize: "2rem", color: "black" }}
+            style={{ fontSize: "2rem", color: "#000" }}
           >
             {currentContent}
           </Card.Text>

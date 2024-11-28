@@ -5,19 +5,16 @@ const NewsArticle = ({ title, category, content }) => {
   return (
     <Row>
       <Col md={11} className="d-flex flex-column mb-3">
-        <a style={{ fontWeight: "bold" }} href="/">
+        <a className="fw-bold" href="/">
           {title}
         </a>
-        <span
-          className="text-uppercase"
-          style={{ fontWeight: "bold", fontSize: "0.8rem" }}
-        >
+        <span className="text-uppercase fw-bold" style={{ fontSize: "0.8rem" }}>
           {category.replace("_", " ")}
         </span>
         <span>{content}</span>
       </Col>
       <Col md={1}>
-        <FaRegTimesCircle style={{ color: "blue" }} />
+        <FaRegTimesCircle style={{ color: "#0000FF" }} />
       </Col>
     </Row>
   );

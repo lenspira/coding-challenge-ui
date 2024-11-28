@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSharedData } from "../../contexts/SharedDataContext";
 import Loader from "../../components/Loader/Loader";
 import {
   Container,
@@ -11,13 +12,14 @@ import {
   Modal,
 } from "react-bootstrap";
 
-const Home = () => {
+const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [loaderMessage, setLoaderMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [validationMessage, setValidationMessage] = useState("");
   const navigate = useNavigate();
+  const { setSharedData } = useSharedData();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ const Home = () => {
       return;
     }
     setLoading(true);
+    setSharedData({ entity: normalizedSearchQuery });
     setLoaderMessage("Step 1: Fetching city details...");
     setShowModal(true);
     setTimeout(() => {
@@ -109,4 +112,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

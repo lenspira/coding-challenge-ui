@@ -1,23 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import EntityDetails from "./pages/EntityDetails/EntityDetails";
+import { SharedDataProvider } from "./contexts/SharedDataContext";
+import Home from "./pages/HomePage/HomePage";
+import EntityDetails from "./pages/EntityDetailsPage/EntityDetailsPage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
-    <div className="App">
+    <SharedDataProvider>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/entity-details" element={<EntityDetails />} />
-        <Route
-          path="*"
-          element={
-            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-              This page cannot be found.
-            </div>
-          }
-        />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </div>
+    </SharedDataProvider>
   );
 }
 
