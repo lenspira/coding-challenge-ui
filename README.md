@@ -43,6 +43,10 @@ REACT_APP_CHATBOT_API_ENDPOINT=your_chatbot_api_endpoint
    ```
    npm start
    ```
+4. For local testing, send the properly-formatted POST request to your backend API, e.g:
+   ```
+   http://localhost:8000/chat
+   ```
 
 ## Deployment
 
